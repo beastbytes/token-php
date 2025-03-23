@@ -76,7 +76,7 @@ class TokenStorageTest extends TestCase
     /**
      * @throws ReflectionException
      */
-    #[dataProvider('tokensProvider')]
+    #[dataProvider('tokenProvider')]
     public function testCantAddDuplicateToken(array $rawToken): void
     {
         $token = $this->createToken($rawToken);
@@ -211,7 +211,7 @@ class TokenStorageTest extends TestCase
         }
     }
 
-    public static function tokensProvider(): Generator
+    public static function tokenProvider(): Generator
     {
         for ($i = 0; $i < 10; $i++) {
             yield 'test-token-value-' . $i => [[
