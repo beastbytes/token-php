@@ -27,5 +27,8 @@
     "psr-4": {
       "BeastBytes\\Token\\Php\\Tests\\": "tests/"
     }
+  },
+  "suggest": {
+    "beastbytes/token-uuid4": "Factory for UUID4 tokens"
   }
 }
