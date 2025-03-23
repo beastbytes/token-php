@@ -1,6 +1,9 @@
 # BeastBytes Token PHP
 PHP file storage for the [BeastBytes Token](https://github.com/beastbytes/token.git) package.
 
+Do not use this package directly;
+use TokenManager in [BeastBytes Token](https://github.com/beastbytes/token.git) package.
+
 ## Requirements
 * PHP 8.1 or higher.
 
