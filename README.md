@@ -17,31 +17,13 @@ or add the following to the 'require' section composer.json:
 "beastbytes/token-php": "^1.0"
 ```
 
-## Usage
-If using directly:
-```php
-$tokenManager = new BeastBytes\Token\TokenManager(
-    new BeastBytes\Token\Factory\Uuid4\TokenFactory(),
-    new BeastBytes\Token\Storage\Php\TokenStorage() // or any other TokenStorageInterface implementation
-);
-```
-or define in the "di" section of Yii3 configuration:
-
+## Configuration
+If using Yii's dependency injection container, add the following to the "params" of your configuration:
 ```php
 return [
-    TokenFactoryInterface::class => \BeastBytes\Token\Factory\Uuid4\TokenFactory::class,
-    TokenStorageInterface::class => [
-        'class' => TokenStorage::class,
-        '__construct()' => [
-            // constructor arguments for the TokenStorage class
-        ],
+    'beastbytes/token' => [
+        'filePath' => '/path/to/token/storage/file',
     ],
-    ManagerInterface::class => [
-        'class' => Manager::class,
-        '__construct()' => [
-            'factory' => Reference::to(TokenFactoryInterface::class),
-            'storage' => Reference::to(TokenStorageInterface::class),
-        ],
-    ],
+    // other parameters
 ];
 ```
